@@ -45,7 +45,7 @@ def setup_gameboard(grid_size, mine_ratio=.2):
         x = random.randint(0, grid_size - 1)
         y = random.randint(0, grid_size - 1)
 
-        mine = f"{x}{y}"
+        mine = (x * 10) + y
 
         if mine not in mine_coords: 
             mine_coords.add(mine)
@@ -138,6 +138,7 @@ def play_game():
     pp(grid)
 
     again = input("\n\nPlay again (y/n)? ")
+
     if again == "y":
         play_game()
     else:
